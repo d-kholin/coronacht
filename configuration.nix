@@ -129,6 +129,7 @@
     ssh-to-age
     sops
     tree
+    colmena
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
