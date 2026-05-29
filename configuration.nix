@@ -110,6 +110,9 @@
     SSH_AUTH_SOCK = "/home/michael/.bitwarden-ssh-agent.sock";
   };
 
+  # Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
