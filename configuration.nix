@@ -69,7 +69,7 @@
   users.users.michael = {
     isNormalUser = true;
     description = "michael";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
      claude-code
     ];
@@ -133,6 +133,7 @@
   services.tailscale.enable = true;
   networking.firewall.checkReversePath = "loose";
 
+  virtualisation.docker.enable = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
