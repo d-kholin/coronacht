@@ -125,6 +125,10 @@
     bat
     bmon
     elmPackages.nodejs
+    element-desktop
+    ssh-to-age
+    sops
+    tree
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
