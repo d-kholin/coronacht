@@ -129,6 +129,10 @@
   #   enableSSHSupport = true;
   # };
 
+  # Tailscale
+  services.tailscale.enable = true;
+  networking.firewall.checkReversePath = "loose";
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
