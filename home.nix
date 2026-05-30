@@ -21,6 +21,18 @@
         HostName = "172.20.0.4";
         User = "michael";
       };
+      "pve1.thegriffiths.ca pve1" = {
+        HostName = "100.115.160.103";
+        User = "root";
+      };
+      "pve3.thegriffiths.ca pve3" = {
+        HostName = "100.91.206.2";
+        User = "root";
+      };
+      "pve4.thegriffiths.ca pve4" = {
+        HostName = "100.73.204.124";
+        User = "root";
+      };
     };
   };
 
