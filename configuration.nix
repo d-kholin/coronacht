@@ -89,22 +89,9 @@
     };
   };
 
-    # Git with SSH key signing
-    programs.git = {
-      enable = true;
-      config = {
-        user.name = "d-kholin";
-        user.email = "michael@thegriffiths.ca";
-        gpg.format = "ssh";
-        gpg.ssh.allowedSignersFile = "/etc/git/allowed_signers";
-        user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB0UuxPDrNThrfQXcdwAIr2ZZ5TcrL6cdDdjW/z5cNYa MG-General";
-        commit.gpgsign = true;
-      };
-    };
-
-    environment.etc."git/allowed_signers".text = ''
-      michael@thegriffiths.ca ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB0UuxPDrNThrfQXcdwAIr2ZZ5TcrL6cdDdjW/z5cNYa MG-General
-    '';
+  environment.etc."git/allowed_signers".text = ''
+    michael@thegriffiths.ca ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB0UuxPDrNThrfQXcdwAIr2ZZ5TcrL6cdDdjW/z5cNYa MG-General
+  '';
 
   # Bitwarden SSH agent
   environment.sessionVariables = {
