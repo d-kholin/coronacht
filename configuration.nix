@@ -123,6 +123,7 @@
     colmena
     vscode
     dig
+    grok-build
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -136,6 +137,17 @@
   # Tailscale
   services.tailscale.enable = true;
   networking.firewall.checkReversePath = "loose";
+
+  services.flatpak = {
+    enable = true;
+    remotes = [{
+      name = "flathub";
+      location = "https://flathub.org/repo/flathub.flatpakrepo";
+    }];
+    packages = [
+      { appId = "com.bambulab.BambuStudio"; origin = "flathub"; }
+    ];
+  };
 
   virtualisation.docker.enable = true;
   # List services that you want to enable:
