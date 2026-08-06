@@ -93,7 +93,8 @@
     michael@thegriffiths.ca ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB0UuxPDrNThrfQXcdwAIr2ZZ5TcrL6cdDdjW/z5cNYa MG-General
   '';
 
-  # Bitwarden SSH agent
+  # Bitwarden SSH agent (disable GCR agent so it doesn't steal SSH_AUTH_SOCK)
+  services.gnome.gcr-ssh-agent.enable = false;
   environment.sessionVariables = {
     SSH_AUTH_SOCK = "/home/michael/.bitwarden-ssh-agent.sock";
   };
@@ -116,7 +117,6 @@
     bat
     bmon
     elmPackages.nodejs
-    element-desktop
     ssh-to-age
     sops
     tree
@@ -146,7 +146,10 @@
     }];
     packages = [
       { appId = "com.bambulab.BambuStudio"; origin = "flathub"; }
+      { appId = "im.riot.Riot"; origin = "flathub"; } # Element Desktop
     ];
+    # Electron safeStorage needs the secret service (not in Element's default finish-args yet)
+    overrides.settings."im.riot.Riot"."Session Bus Policy"."org.freedesktop.secrets" = "talk";
   };
 
   virtualisation.docker.enable = true;
