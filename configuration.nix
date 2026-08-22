@@ -89,6 +89,15 @@
     };
   };
 
+  # Steam (pulls in 32-bit libs for games; AMD iGPU uses mesa automatically)
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
+  programs.gamemode.enable = true;
+
   environment.etc."git/allowed_signers".text = ''
     michael@thegriffiths.ca ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB0UuxPDrNThrfQXcdwAIr2ZZ5TcrL6cdDdjW/z5cNYa MG-General
   '';
