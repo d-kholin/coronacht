@@ -123,9 +123,11 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     bitwarden-desktop
+    discord
     bat
     bmon
     elmPackages.nodejs
+    age
     ssh-to-age
     sops
     tree
@@ -133,6 +135,15 @@
     vscode
     dig
     grok-build
+    rpi-imager
+    openscad
+    # k3s-hl client tools (kubeconfig lives at ~/.kube/config — not in the store)
+    kubectl
+    kubernetes
+    kubernetes-helm
+    k9s
+    codex
+    headlamp # https://headlamp.dev — desktop/web Kubernetes UI
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -162,6 +173,10 @@
   };
 
   virtualisation.docker.enable = true;
+
+  # Firmware/BIOS updates via LVFS (Dell capsules without Windows)
+  services.fwupd.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
