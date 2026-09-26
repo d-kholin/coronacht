@@ -137,6 +137,7 @@
     grok-build
     rpi-imager
     openscad
+    opencloud-desktop
     # k3s-hl client tools (kubeconfig lives at ~/.kube/config — not in the store)
     kubectl
     kubernetes
